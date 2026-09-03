@@ -2,4 +2,4 @@
 # packages (e.g. flatdict via okta) that import pkg_resources in their setup.py.
 # This file is passed via --build-constraint to uv pip install, ensuring the
 # build isolation environments use a compatible setuptools version.
-setuptools<82.0.0
+setuptools<84.0.0
