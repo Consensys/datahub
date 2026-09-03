@@ -99,7 +99,14 @@ even when it carries no `p0` marker, so a newly added or edited test runs on its
 author's PR instead of first executing post-merge. That union is per-module: a
 change to a shared fixture or to `conftest.py` pulls in no test module of its
 own, so a PR needing broader coverage than its own touched modules asks for the
-whole suite with the full-suite PR label.
+whole suite with the `smoke-full` PR label.
+
+Add `smoke-full` to a pull request to run every test on it instead of the `p0`
+tier — for changes whose blast radius is wider than their own touched modules,
+such as a shared fixture, `conftest.py`, or a broad refactor. The label is read
+from the event payload, as every other label this CI honours is, so it applies
+on the PR's next push; re-running an existing workflow replays the original
+payload and will not see it.
 
 ## Test Categories
 
