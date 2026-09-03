@@ -16,7 +16,7 @@ aiofiles==25.1.0
     # via unstructured-client
 aiohappyeyeballs==2.6.1
     # via aiohttp
-aiohttp==3.13.5
+aiohttp==3.14.3
     # via
     #   acryl-datahub
     #   aiobotocore
@@ -71,7 +71,7 @@ attrs==25.4.0
     #   pytest-docker
     #   referencing
     #   zeep
-authlib==1.7.0
+authlib==1.7.1
     # via
     #   acryl-datahub
     #   confluent-kafka
@@ -299,7 +299,7 @@ db-dtypes==1.5.0
     # via acryl-datahub
 decorator==5.2.1
     # via gssapi
-deepdiff==8.6.1
+deepdiff==9.1.0
     # via acryl-datahub
 deepmerge==2.0
     # via acryl-datahub
@@ -334,7 +334,7 @@ docutils==0.22.4
     # via readme-renderer
 duckdb==1.5.0
     # via acryl-datahub
-ecdsa==0.19.1
+ecdsa==0.19.2
     # via python-jose
 emoji==2.15.0
     # via unstructured
@@ -625,7 +625,7 @@ jmespath==1.1.0
     #   botocore
 joblib==1.5.3
     # via nltk
-joserfc==1.6.4
+joserfc==1.6.8
     # via authlib
 jpype1==1.6.0
     # via acryl-datahub
@@ -706,7 +706,7 @@ mdit-py-plugins==0.5.0
     # via textual
 mdurl==0.1.2
     # via markdown-it-py
-memray==1.19.1
+memray==1.20.0
     # via acryl-datahub
 mini-racer==0.14.1
     # via acryl-datahub
@@ -882,7 +882,7 @@ pinecone-plugin-interface==0.0.7
     # via
     #   pinecone-client
     #   pinecone-plugin-inference
-pip==26.1.2
+pip==26.2
     # via acryl-datahub
 platformdirs==4.9.4
     # via
@@ -961,7 +961,7 @@ pyarrow==18.0.0
     #   deltalake
     #   feast
     #   pyiceberg
-pyasn1==0.6.2
+pyasn1==0.6.4
     # via
     #   pyasn1-modules
     #   python-jose
@@ -1036,7 +1036,7 @@ pyparsing==3.3.2
     # via
     #   pyiceberg
     #   rdflib
-pypdf==6.10.2
+pypdf==6.16.1
     # via unstructured-client
 pypdfium2==5.6.0
     # via unstructured-client
@@ -1089,7 +1089,7 @@ python-dateutil==2.9.0.post0
     #   trino
     #   unstructured-ingest
     #   vertica-python
-python-dotenv==1.2.2
+python-dotenv==1.2.3
     # via uvicorn
 python-iso639==2026.1.31
     # via unstructured
@@ -1099,7 +1099,7 @@ python-json-logger==4.0.0
     # via acryl-datahub
 python-ldap==3.4.5
     # via acryl-datahub
-python-liquid==2.1.0
+python-liquid==2.2.1
     # via acryl-datahub
 python-magic==0.4.27
     # via unstructured
@@ -1145,7 +1145,7 @@ pyyaml==6.0.3
     #   responses
     #   uvicorn
     #   vcrpy
-pyzipper==0.3.6
+pyzipper==0.4.0
     # via acryl-datahub
 rapidfuzz==3.14.3
     # via unstructured
@@ -1305,7 +1305,7 @@ smmap==5.0.3
     # via gitdb
 sniffio==1.3.1
     # via google-genai
-snowflake-connector-python==4.4.0
+snowflake-connector-python==4.7.1
     # via
     #   acryl-datahub
     #   snowflake-sqlalchemy
@@ -1316,7 +1316,7 @@ sortedcontainers==2.4.0
     #   acryl-datahub
     #   hypothesis
     #   snowflake-connector-python
-soupsieve==2.8.3
+soupsieve==2.8.4
     # via beautifulsoup4
 sqlalchemy==1.4.44
     # via
@@ -1366,7 +1366,7 @@ sqlparse==0.6.0
     #   mlflow-skinny
 sspilib==0.5.0 ; sys_platform == 'win32'
     # via pyspnego
-starlette==0.52.1
+starlette==1.3.1
     # via fastapi
 starrocks==1.3.3
     # via acryl-datahub
@@ -1398,7 +1398,7 @@ textual==8.0.2
     # via memray
 thoughtspot-rest-api==2.0.3
     # via acryl-datahub
-thrift==0.16.0
+thrift==0.24.0
     # via
     #   acryl-pyhive
     #   databricks-sql-connector
@@ -1571,7 +1571,7 @@ tzlocal==5.3.1
     #   trino
 uc-micro-py==2.0.0
     # via linkify-it-py
-ujson==5.12.1
+ujson==5.13.0
     # via acryl-datahub
 unicodecsv==0.14.1
     # via
@@ -1605,7 +1605,7 @@ uvicorn-worker==0.4.0
     # via feast
 uvloop==0.22.1 ; platform_python_implementation != 'PyPy' and sys_platform != 'cygwin' and sys_platform != 'win32'
     # via uvicorn
-vcrpy==8.1.1
+vcrpy==8.2.1
     # via acryl-datahub
 vertica-python==1.4.0
     # via vertica-sqlalchemy-dialect
@@ -1649,7 +1649,7 @@ yarl==1.23.0
     # via
     #   aiohttp
     #   okta
-zeep==4.3.2
+zeep==4.3.3
     # via simple-salesforce
 zipp==3.23.0
     # via importlib-metadata

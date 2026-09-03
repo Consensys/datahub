@@ -21,9 +21,9 @@ ruff==0.15.22
 # which conflicts with acryl-great-expectations (urllib3<1.27) via acryl-datahub[mysql].
 types-requests>=2.28.11.6,<=2.31.0.3
 types-PyYAML
-requests>=2.32.4,<3.0.0
+requests>=2.34.2,<3.0.0
 # Missing numpy requirement in 8.0.0
 deepdiff!=8.0.0
 opensearch-py==3.2.0
 
-python-dotenv==1.0.1
+python-dotenv==1.2.3
