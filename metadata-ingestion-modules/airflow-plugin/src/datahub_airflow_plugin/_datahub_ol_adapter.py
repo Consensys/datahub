@@ -31,9 +31,9 @@ OL_SCHEME_TWEAKS = {
 _OL_PARTITION_PATTERNS: list[str] = [
     r"/\d{2}/\d{2}/\d{4}/AWSDynamoDB",
     r"/dt=\d{4}-\d{2}-\d{2}",
-    r"/year=\d{4}/month=\d{2}/day=\d{2}/hour=\d{2}",  # must precede day-only
+    r"/year=\d{4}/month=\d{2}/day=\d{2}/hour=\d{2}", 
     r"/year=\d{4}/month=\d{2}/day=\d{2}",
-    r"/year=\d{4}/month=\d{2}",  # must follow day-specific patterns
+    r"/year=\d{4}/month=\d{2}",  
     r"/date=\d{4}-\d{2}-\d{2}",
     r"/\d{4}/\d{2}/\d{2}",
 ]
