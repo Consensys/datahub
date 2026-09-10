@@ -31,11 +31,14 @@ OL_SCHEME_TWEAKS = {
 _OL_PARTITION_PATTERNS: list[str] = [
     r"/\d{2}/\d{2}/\d{4}/AWSDynamoDB",
     r"/dt=\d{4}-\d{2}-\d{2}",
-    r"/year=\d{4}/month=\d{2}/day=\d{2}/hour=\d{2}", 
+    r"/year=\d{4}/month=\d{2}/day=\d{2}/hour=\d{2}",
+    r"/year=\d{4}/month=\d{2}/day=\d{2}/\d{8}",  # must precede day-only (with trailing YYYYMMDD)
     r"/year=\d{4}/month=\d{2}/day=\d{2}",
     r"/year=\d{4}/month=\d{2}",  
     r"/date=\d{4}-\d{2}-\d{2}",
+    r"/\d{4}-\d{2}-\d{2}",  # bare YYYY-MM-DD date segment (no key prefix)
     r"/\d{4}/\d{2}/\d{2}",
+    r"/\d{4}/\d{2}",  # must follow day-specific pattern
 ]
 
 # Fire the sanitiser warning at most once per worker process
@@ -100,10 +103,13 @@ def _strip_partition_segments(name: str) -> str:
 
     Patterns are applied in order from most specific to least specific
     to avoid partial matches swallowing longer patterns.
+    A leading "/" is normalized before matching so patterns work whether
+    the name starts at the root or mid-path (e.g. "year=2025/month=03").
     """
+    normalized = "/" + name.lstrip("/")
     for pattern in _OL_PARTITION_PATTERNS:
-        name = re.sub(pattern, "", name)
-    return name.strip("/")
+        normalized = re.sub(pattern, "", normalized)
+    return normalized.strip("/")
 
 
 def translate_ol_to_datahub_urn(
