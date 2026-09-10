@@ -32,13 +32,13 @@ _OL_PARTITION_PATTERNS: list[str] = [
     r"/\d{2}/\d{2}/\d{4}/AWSDynamoDB",
     r"/dt=\d{4}-\d{2}-\d{2}",
     r"/year=\d{4}/month=\d{2}/day=\d{2}/hour=\d{2}",
-    r"/year=\d{4}/month=\d{2}/day=\d{2}/\d{8}",  # must precede day-only (with trailing YYYYMMDD)
+    r"/year=\d{4}/month=\d{2}/day=\d{2}/\d{8}", 
     r"/year=\d{4}/month=\d{2}/day=\d{2}",
     r"/year=\d{4}/month=\d{2}",  
     r"/date=\d{4}-\d{2}-\d{2}",
-    r"/\d{4}-\d{2}-\d{2}",  # bare YYYY-MM-DD date segment (no key prefix)
+    r"/\d{4}-\d{2}-\d{2}",  
     r"/\d{4}/\d{2}/\d{2}",
-    r"/\d{4}/\d{2}",  # must follow day-specific pattern
+    r"/\d{4}/\d{2}",
 ]
 
 # Fire the sanitiser warning at most once per worker process
