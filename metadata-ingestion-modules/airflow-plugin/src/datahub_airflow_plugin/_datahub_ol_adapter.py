@@ -104,7 +104,7 @@ def _strip_partition_segments(name: str) -> str:
     Patterns are applied in order from most specific to least specific
     to avoid partial matches swallowing longer patterns.
     A leading "/" is normalized before matching so patterns work whether
-    the name starts at the root or mid-path (e.g. "year=2025/month=03").
+    the name starts at the root or mid-path.
     """
     normalized = "/" + name.lstrip("/")
     for pattern in _OL_PARTITION_PATTERNS:
