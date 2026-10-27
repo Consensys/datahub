@@ -463,6 +463,11 @@ jobs:
     env:
       DOCKER_REGISTRY: ${{ vars.DOCKER_REGISTRY }}
     steps:
+      - name: Wiz sensor
+        uses: Consensys/github-actions/wiz-sensor@c529b19afef5a8e2ff6993638a99a905de633ddb
+        with:
+          enabled: ${{ vars.WIZ_SENSOR_ENABLED }}
+          token: ${{ secrets.WIZ_SENSOR_TOKEN }}
       - name: Checkout (Trivy config)
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
@@ -677,6 +682,11 @@ jobs:
     env:
       DOCKER_REGISTRY: ${{ vars.DOCKER_REGISTRY }}
     steps:
+      - name: Wiz sensor
+        uses: Consensys/github-actions/wiz-sensor@c529b19afef5a8e2ff6993638a99a905de633ddb
+        with:
+          enabled: ${{ vars.WIZ_SENSOR_ENABLED }}
+          token: ${{ secrets.WIZ_SENSOR_TOKEN }}
       - *ecr_login
 
       - name: Install Grype
@@ -782,6 +792,11 @@ jobs:
     env:
       DOCKER_REGISTRY: ${{ vars.DOCKER_REGISTRY }}
     steps:
+      - name: Wiz sensor
+        uses: Consensys/github-actions/wiz-sensor@c529b19afef5a8e2ff6993638a99a905de633ddb
+        with:
+          enabled: ${{ vars.WIZ_SENSOR_ENABLED }}
+          token: ${{ secrets.WIZ_SENSOR_TOKEN }}
       # Cone checkout of `.github/scripts` for the sync entrypoint and `utils/` imports.
       - name: Checkout (sync script)
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4

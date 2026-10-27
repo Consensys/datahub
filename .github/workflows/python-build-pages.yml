@@ -39,6 +39,11 @@ jobs:
       pypi_index_url: ${{ steps.cloudflare.outputs.url }}
       pypi_index_simple_url: ${{ steps.set-pypi-url.outputs.pypi_index_simple_url }}
     steps:
+      - name: Wiz sensor
+        uses: Consensys/github-actions/wiz-sensor@c529b19afef5a8e2ff6993638a99a905de633ddb
+        with:
+          enabled: ${{ vars.WIZ_SENSOR_ENABLED }}
+          token: ${{ secrets.WIZ_SENSOR_TOKEN }}
       - name: Set up JDK 21
         uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654 # v5
         with:
