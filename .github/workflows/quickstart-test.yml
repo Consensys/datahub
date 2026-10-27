@@ -27,6 +27,11 @@ jobs:
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
+      - name: Wiz sensor
+        uses: Consensys/github-actions/wiz-sensor@c529b19afef5a8e2ff6993638a99a905de633ddb
+        with:
+          enabled: ${{ vars.WIZ_SENSOR_ENABLED }}
+          token: ${{ secrets.WIZ_SENSOR_TOKEN }}
       - name: Free up disk space
         run: |
           sudo apt-get remove 'dotnet-*' azure-cli || true
@@ -98,6 +103,11 @@ jobs:
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
+      - name: Wiz sensor
+        uses: Consensys/github-actions/wiz-sensor@c529b19afef5a8e2ff6993638a99a905de633ddb
+        with:
+          enabled: ${{ vars.WIZ_SENSOR_ENABLED }}
+          token: ${{ secrets.WIZ_SENSOR_TOKEN }}
       - name: Free up disk space
         run: |
           sudo apt-get remove 'dotnet-*' azure-cli || true
@@ -180,6 +190,11 @@ jobs:
         datahub_version: ["v1.1.0", "v1.2.0", "v1.3.0.1", "head"]
       fail-fast: false
     steps:
+      - name: Wiz sensor
+        uses: Consensys/github-actions/wiz-sensor@c529b19afef5a8e2ff6993638a99a905de633ddb
+        with:
+          enabled: ${{ vars.WIZ_SENSOR_ENABLED }}
+          token: ${{ secrets.WIZ_SENSOR_TOKEN }}
       - name: Free up disk space
         run: |
           sudo apt-get remove 'dotnet-*' azure-cli || true
@@ -222,6 +237,11 @@ jobs:
         datahub_version: ["v1.0.0"]
       fail-fast: false
     steps:
+      - name: Wiz sensor
+        uses: Consensys/github-actions/wiz-sensor@c529b19afef5a8e2ff6993638a99a905de633ddb
+        with:
+          enabled: ${{ vars.WIZ_SENSOR_ENABLED }}
+          token: ${{ secrets.WIZ_SENSOR_TOKEN }}
       - name: Free up disk space
         run: |
           sudo apt-get remove 'dotnet-*' azure-cli || true
@@ -255,6 +275,11 @@ jobs:
         datahub_version: ["v1.1.0", "v1.2.0"]
       fail-fast: false
     steps:
+      - name: Wiz sensor
+        uses: Consensys/github-actions/wiz-sensor@c529b19afef5a8e2ff6993638a99a905de633ddb
+        with:
+          enabled: ${{ vars.WIZ_SENSOR_ENABLED }}
+          token: ${{ secrets.WIZ_SENSOR_TOKEN }}
       - name: Free up disk space
         run: |
           sudo apt-get remove 'dotnet-*' azure-cli || true
@@ -319,6 +344,11 @@ jobs:
             should_fail: false
       fail-fast: false
     steps:
+      - name: Wiz sensor
+        uses: Consensys/github-actions/wiz-sensor@c529b19afef5a8e2ff6993638a99a905de633ddb
+        with:
+          enabled: ${{ vars.WIZ_SENSOR_ENABLED }}
+          token: ${{ secrets.WIZ_SENSOR_TOKEN }}
       - name: Free up disk space
         run: |
           sudo apt-get remove 'dotnet-*' azure-cli || true

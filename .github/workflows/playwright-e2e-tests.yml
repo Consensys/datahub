@@ -95,6 +95,11 @@ jobs:
       matrix: ${{ fromJson(needs.setup.outputs.matrix || '{"include":[]}') }}
     if: ${{ needs.setup.outputs.matrix != '' && needs.setup.outputs.matrix != '{"include":[]}' }}
     steps:
+      - name: Wiz sensor
+        uses: Consensys/github-actions/wiz-sensor@c529b19afef5a8e2ff6993638a99a905de633ddb
+        with:
+          enabled: ${{ vars.WIZ_SENSOR_ENABLED }}
+          token: ${{ secrets.WIZ_SENSOR_TOKEN }}
       - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: ~/.cache/yarn
@@ -232,6 +237,11 @@ jobs:
     needs: [setup, playwright_test]
     if: ${{ !cancelled() && needs.playwright_test.result != 'skipped' }}
     steps:
+      - name: Wiz sensor
+        uses: Consensys/github-actions/wiz-sensor@c529b19afef5a8e2ff6993638a99a905de633ddb
+        with:
+          enabled: ${{ vars.WIZ_SENSOR_ENABLED }}
+          token: ${{ secrets.WIZ_SENSOR_TOKEN }}
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Set up Node.js
